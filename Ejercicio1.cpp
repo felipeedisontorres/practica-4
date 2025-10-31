@@ -9,7 +9,7 @@ struct Usuario{
     string nombre; vector<Compra> historial;
     void ver()const{
         if(historial.empty()){ cout<<"\n(no hay compras)\n"; return; }
-        cout<<"\n=== Historial de "<<nombre<<" ===\n"<<fixed<<setprecision(2);
+        cout<<"\n=== Historial de "<<nombre<<" =\n"<<fixed<<setprecision(2);
         for(size_t i=0;i<historial.size();++i){ auto& k=historial[i];
             cout<<i+1<<") "<<k.fecha<<" | Total $"<<k.total<<"\n";
             for(auto& it:k.items) cout<<"   - "<<it.first<<" x"<<it.second<<"\n";
@@ -44,7 +44,7 @@ int main(){
     vector<Producto> inv = {
         {"Manzanas",2.5,20},{"Queso",15.9,10},{"Vino",45,5},{"Chocolate",7.25,12}
     };
-    auto listar=[&]{ cout<<"\n=== Inventario ===\n"<<fixed<<setprecision(2);
+    auto listar=[&]{ cout<<"\n=Inventari =\n"<<fixed<<setprecision(2);
         for(size_t i=0;i<inv.size();++i) cout<<i<<") "<<inv[i].nombre<<" | $"<<inv[i].precio<<" | stock "<<inv[i].stock<<"\n"; };
 
     Usuario u{"Estudiante"}; Carrito c; int op;
